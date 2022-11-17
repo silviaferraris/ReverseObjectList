@@ -16,7 +16,7 @@ public class ReverseObjectList {
         ListIterator<Object> startPoint = objectListToBeReversed.listIterator();
         ListIterator<Object> endPoint = objectListToBeReversed.listIterator(objectListToBeReversed.size());
 
-        System.out.println(objectListToBeReversed);
+        System.out.println("Lista degli oggetti prima dell'inversione degli elementi: " + objectListToBeReversed);
 
         for (int i= 0; i <objectListToBeReversed.size() / 2; i++){
 
@@ -27,7 +27,7 @@ public class ReverseObjectList {
             endPoint.set(startElement);
 
         }
-
+        System.out.println("Lista degli oggetti dopo l'inversione degli elementi:"  + objectListToBeReversed);
         System.out.println(objectListToBeReversed);
         return  objectListToBeReversed;
 
