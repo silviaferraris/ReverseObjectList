@@ -31,8 +31,6 @@ public class ReverseObjectList {
         System.out.println(objectListToBeReversed);
         return  objectListToBeReversed;
 
-
-
     }
 
 }

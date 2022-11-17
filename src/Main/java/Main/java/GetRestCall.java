@@ -34,11 +34,15 @@ public class GetRestCall {
                 response.append(line);
             }
 
+
         }
+
+        String result = response.toString();
+        //.substring(response.toString().indexOf("{"), response.toString().indexOf("}")+1);
 
         //retrieve the object from the json response and add them into a List
         List<Object> list = new ArrayList<>();
-        JSONObject obj = new JSONObject(response);
+        JSONObject obj = new JSONObject(result);
         JSONArray array = (JSONArray) obj.get("results");
 
         for (int i = 0; i < array.length(); i++) {
