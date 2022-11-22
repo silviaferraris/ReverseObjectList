@@ -1,4 +1,4 @@
-package Main.java;
+package com.reverseobjlist.net.requests;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -9,9 +9,9 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GetRestCall {
+public class GetRequest {
 
-    public static List<Object> makeRestCall (String url) throws IOException {
+    public static String getCall (String url) throws IOException {
 
         URL getURL = new URL(url);
         StringBuilder response = new StringBuilder();
@@ -33,24 +33,9 @@ public class GetRestCall {
             for (String line; (line = reader.readLine()) != null; ) {
                 response.append(line);
             }
-
-
         }
 
-        String result = response.toString();
-        //.substring(response.toString().indexOf("{"), response.toString().indexOf("}")+1);
+        return response.toString();
 
-        //retrieve the object from the json response and add them into a List
-        List<Object> list = new ArrayList<>();
-        JSONObject obj = new JSONObject(result);
-        JSONArray array = (JSONArray) obj.get("results");
-
-        for (int i = 0; i < array.length(); i++) {
-
-            JSONObject new_obj = (JSONObject) array.get(i);
-            list.add(new_obj);
-
-        }
-        return list;
     }
 }
